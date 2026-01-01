@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _db = FirebaseFirestore.instance; // ✅ ADDED
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
 
   /// Initialize GoogleSignIn
@@ -16,7 +16,7 @@ class AuthService {
     );
   }
 
-  /// ✅ NEW: Check if current user is Admin
+  /// Checks if the currently logged-in user has admin privileges.
   Future<bool> isAdmin() async {
     User? user = _auth.currentUser;
     if (user == null) return false;
@@ -36,7 +36,7 @@ class AuthService {
       UserCredential userCredential = await _auth
           .createUserWithEmailAndPassword(email: email, password: password);
 
-      // 2. ✅ CREATE DOCUMENT IN FIRESTORE (This makes the 'users' collection appear)
+      // Create user document in Firestore
       await _db.collection('users').doc(userCredential.user!.uid).set({
         'email': email,
         'isAdmin': false, // Default is false
@@ -83,7 +83,7 @@ class AuthService {
         userCredential = await _auth.signInWithCredential(credential);
       }
 
-      // ✅ ADDED: Create Firestore document for Google users if it doesn't exist
+      // Create Firestore document for Google users if it doesn't exist
       final userDoc =
           await _db.collection('users').doc(userCredential.user!.uid).get();
       if (!userDoc.exists) {
