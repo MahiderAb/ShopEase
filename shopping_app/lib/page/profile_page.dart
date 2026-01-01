@@ -65,6 +65,17 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
+                // Edit Profile Button
+                TextButton.icon(
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("Profile editing coming soon!")),
+                    );
+                  },
+                  icon: const Icon(Icons.edit, size: 16),
+                  label: const Text("Edit Profile"),
+                ),
+                const SizedBox(height: 5),
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,

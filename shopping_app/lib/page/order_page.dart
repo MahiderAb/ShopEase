@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import 'package:shopping_app/page/notifications_page.dart';
 import 'package:shopping_app/service/auth_service.dart';
+import 'package:shopping_app/page/order_detail_page.dart'; // Import detail page
 
 class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
@@ -131,6 +132,14 @@ class _OrderPageState extends State<OrderPage> {
                             ),
                       title: Text(productTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
                       trailing: _buildStatusChip(status),
+                      onTap: () {
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(
+                             builder: (_) => OrderDetailPage(orderData: order, orderId: orderId),
+                           ),
+                         );
+                      },
                     ),
                     if (order['adminNote'] != null)
                       Padding(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/page/cart_page.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/page/cart_provider.dart';
 import 'package:shopping_app/page/order_page.dart';
 import 'package:shopping_app/page/product_list.dart';
 import 'package:shopping_app/page/favorites_page.dart';
@@ -73,8 +75,17 @@ class _HomescreanState extends State<Homescrean> {
               NavigationDestination(
                   icon: Icon(Icons.receipt_long_outlined), label: 'Orders'),
               NavigationDestination(
-                  icon: Icon(Icons.shopping_bag_outlined),
-                  selectedIcon: Icon(Icons.shopping_bag_rounded),
+                  icon: Consumer<CartProvider>(
+                    builder: (context, cart, child) {
+                      final count = cart.cart.length;
+                      return Badge(
+                        isLabelVisible: count > 0,
+                        label: Text('$count'),
+                        child: const Icon(Icons.shopping_bag_outlined),
+                      );
+                    },
+                  ),
+                  selectedIcon: const Icon(Icons.shopping_bag_rounded),
                   label: 'Cart'),
               NavigationDestination(
                   icon: Icon(Icons.person_outline),
