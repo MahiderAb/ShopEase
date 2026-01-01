@@ -12,6 +12,7 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage> {
+  /// Adds the current product to the cart and shows a confirmation message.
   void onTap() {
     Provider.of<CartProvider>(context, listen: false).addproduct({
       'id': widget.product['id'] ?? DateTime.now().toString(),

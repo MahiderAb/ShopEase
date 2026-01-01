@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'favorites_provider.dart';
-import 'cart_provider.dart'; // ✅ Import CartProvider
+import 'cart_provider.dart';
 
 class ProductCard extends StatefulWidget {
   final String title;
@@ -48,7 +48,7 @@ class _ProductCardState extends State<ProductCard> {
     );
   }
 
-  // ✅ Updated _addToCart
+  /// Adds the current product to the shopping cart.
   Future<void> _addToCart() async {
     final cartProvider = Provider.of<CartProvider>(context, listen: false);
     if (widget.productId == null) return;
@@ -60,14 +60,16 @@ class _ProductCardState extends State<ProductCard> {
       'productId': widget.productId,
     });
 
-    _showMsg("Added to cart! 🛒", Colors.blueGrey);
+    _showMsg('Added to cart!', Colors.blueGrey);
   }
 
+  /// Handles the "Buy Now" action for immediate purchase.
   Future<void> _placeOrder(BuildContext context) async {
     // Your existing buy now logic
-    _showMsg("Order placed! ✅", Colors.green);
+    _showMsg('Order placed!', Colors.green);
   }
 
+  /// Builds the product image widget, supporting both base64 and network URLs.
   Widget _buildProductImage(String imageStr) {
     if (imageStr.isEmpty) return const Icon(Icons.image_not_supported, color: Colors.grey);
     if (imageStr.startsWith('data:image')) {
@@ -170,7 +172,7 @@ class _ProductCardState extends State<ProductCard> {
                       Row(
                         children: [
                           GestureDetector(
-                            onTap: _addToCart, // ✅ Use updated _addToCart
+                            onTap: _addToCart,
                             child: Container(
                               padding: const EdgeInsets.all(4),
                               decoration: BoxDecoration(

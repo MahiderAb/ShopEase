@@ -16,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController passwordController = TextEditingController();
   final AuthService _authService = AuthService();
   bool isLoading = false;
-  bool _obscurePassword = true; // Added for password visibility toggle
+  bool _obscurePassword = true;
 
   @override
   void initState() {
@@ -30,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  /// Handles email/password login authentication.
   void login() async {
     if (emailController.text.isEmpty || passwordController.text.isEmpty) {
       _showError("Please fill in all fields");
@@ -49,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  /// Handles Google Sign-In authentication.
   void loginWithGoogle() async {
     setState(() => isLoading = true);
     final error = await _authService.signInWithGoogle();
@@ -61,6 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  /// Displays an error message using a SnackBar.
   void _showError(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -72,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  /// Navigates to the home screen after successful login.
   void _navigateToHome() {
     Navigator.pushReplacement(
       context,

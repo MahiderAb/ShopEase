@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shopping_app/service/auth_service.dart';
 import 'package:shopping_app/page/login_screen.dart';
-import 'package:intl/intl.dart'; // Add this to pubspec.yaml for date formatting
+import 'package:intl/intl.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -140,6 +140,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
+  /// Builds a styled profile information row.
   Widget _buildProfileItem(IconData icon, String title, String value) {
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
