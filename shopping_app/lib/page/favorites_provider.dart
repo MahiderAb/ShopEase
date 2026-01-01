@@ -10,7 +10,8 @@ class FavoritesProvider extends ChangeNotifier {
 
   List<Map<String, dynamic>> get favorites => _favorites;
 
-  // Load Favorites from Firestore
+  /// Loads the user's favorite items from Firestore.
+  /// Returns early if no user is logged in.
   Future<void> loadFavorites() async {
     final user = _auth.currentUser;
     if (user == null) return;
@@ -30,7 +31,8 @@ class FavoritesProvider extends ChangeNotifier {
     }
   }
 
-  // Toggle Favorite Logic
+  /// Toggles the favorite status of a product.
+  /// If already favorited, removes it; otherwise, adds it.
   Future<void> toggleFavorite(Map<String, dynamic> product) async {
     final user = _auth.currentUser;
     if (user == null) return;
@@ -62,7 +64,7 @@ class FavoritesProvider extends ChangeNotifier {
     }
   }
 
-  // ✅ ADD THIS METHOD: Check if product is favorited by Title
+  /// Checks if a product is in the user's favorites list.
   bool isFavorite(String title) {
     return _favorites.any((item) => item['title'] == title);
   }
