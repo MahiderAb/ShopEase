@@ -18,7 +18,8 @@ class AuthService {
     }
   }
 
-  // Login user
+
+  // Login user rt
   Future<String?> loginUser(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);

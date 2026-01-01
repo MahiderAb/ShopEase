@@ -226,7 +226,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   ),
                   const SizedBox(height: 30),
 
-                  // --- SUBMIT BUTTON ---
+                  // --- SUBMIT BUTTONs ---
                   ElevatedButton(
                     onPressed: _saveProduct,
                     style: ElevatedButton.styleFrom(
