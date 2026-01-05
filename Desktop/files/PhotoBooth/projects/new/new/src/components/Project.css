@@ -1,0 +1,216 @@
+/* Projects Section */
+.projects {
+  padding: 120px 0 100px; /* Top: 120px, Bottom: 100px */
+  background-color: hsl(198, 71%, 97%);
+}
+
+  .projects h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+  
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px 100px; /* 50px vertical gap, 40px horizontal gap */
+    justify-content: center;
+  }
+  
+  
+  .project-item {
+    background-color: #d6d3d7a5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-item:hover {
+    animation: floatLoop 1.5s ease-in-out infinite alternate;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Continuous floating animation */
+  @keyframes floatLoop {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-12px);
+    }
+  }
+  
+  .project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .project-item p {
+    font-size: 1.2rem;
+    color: #3a3434;
+  }
+  
+  .project-statement {
+    text-align: justify;
+    text-justify: inter-word;
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #333;
+    font-weight: 500;
+    background-color: hsl(198, 71%, 97%);
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }  
+  
+  [data-theme="dark"] .project-statement {
+      color: #e0e0e0; /* Light text color for dark mode */
+  }
+  /* Projects Section with Wider Code Samples */
+.code-sample {
+    background-color: #1e1e1e; /* Dark background for code */
+    border-radius: 8px;
+    margin-top: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Make the code sample take full width */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+  }
+  
+  .code-header {
+    background-color: #2d2d2d;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .circle.red {
+    background-color: #ff5f56;
+  }
+  
+  .circle.yellow {
+    background-color: #ffbd2e;
+  }
+  
+  .circle.green {
+    background-color: #27c93f;
+  }
+  
+  .file-name {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+  
+  pre {
+    margin: 0;
+    padding: 15px;
+    overflow-x: auto;
+    width: 100%; /* Make the pre element take full width */
+  }
+  
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #abb2bf; /* Light gray for code text */
+    display: block; /* Ensure the code block takes full width */
+    width: 100%; /* Make the code block take full width */
+  }
+/* Flow-in Animations (can live in a global or shared CSS file) */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .container-5 h2{
+    text-align: center;
+  }
+
+
+  .github-image-projects {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px; /* Slightly bigger gap to balance bigger images */
+    margin-top: 80px;
+    margin-bottom: 200px;
+    flex-wrap: wrap;
+    background-color: hsl(198, 71%, 97%);
+  }
+  
+  .project-image-link {
+    width: 100%;
+    max-width: 380px; /* Increased image size */
+    height: auto;
+    border-radius: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-image-link:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  @media (max-width: 992px) {
+    .github-image-projects {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+  
+    .project-image-link {
+      max-width: 95%;
+    }
+  }
+  
+  
+  
+  
+
+  
+
+  .animate-on-load {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .loaded .animate-on-load {
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  /* Footer */
+  footer {
+    background: linear-gradient(90deg, #031425, hsl(195, 83%, 46%));
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 80px;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1.3rem;    
+  }

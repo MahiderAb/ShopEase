@@ -1,0 +1,143 @@
+/* Contact Section */
+.contact {
+  padding: 80px 0 100px;
+  background-color: #f6f8f8;
+}
+
+.contact h2 {
+  margin-left: 0px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  padding-left: 20px;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; /* This centers both sections vertically */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 400px; /* Added minimum height to ensure centering works */
+}
+
+.contact-form-container {
+  width: 55%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.social-contact-container {
+  width: 40%;
+  min-width: 300px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This centers the content vertically */
+  height: 100%;
+}
+
+/* Rest of your existing CSS remains the same */
+.contact-form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  height: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.contact-form button {
+  background-color: #070c35;
+  color: #fff;
+  border: none;
+  height: 50px;
+  padding: 1px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: inline-block;
+  text-align: center;
+  line-height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-info {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  font-size: larger;
+}
+
+.social-icons a {
+  color: #131169;
+  font-size: 2rem;
+}
+
+.social-icons a:hover{
+color: rgb(22, 103, 234);
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    min-height: auto;
+    align-items: flex-start;
+  }
+  
+  .contact-form-container,
+  .social-contact-container {
+    width: 100%;
+  }
+  
+  .contact h2 {
+    margin-left: 0;
+    text-align: center;
+    padding-left: 0;
+  }
+}
+  /* Footer */
+  footer {
+    background: linear-gradient(90deg, #031425, hsl(195, 83%, 46%));
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 80px;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1.3rem;
+    color: white;
+  }
+
+  /* Responsive footer for smaller screens */
+@media (max-width: 600px) {
+  footer {
+    padding: 20px 15px;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+}
